@@ -1,16 +1,17 @@
 {
   "name": "ql-juejin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "青龙稀土掘金助手：签到、抽奖、沾喜气、消除Bug、海底掘金游戏、自动化工作流。",
   "author": "Leo_chen",
   "scripts": {
-    "checkin": "node checkin.js",
-    "seagold": "node seagold.js"
+    "checkin": "node juejin_checkin.js",
+    "seagold": "node juejin_seagold.js"
   },
   "dependencies": {
-    "juejin-helper": "^1.6.1",
-    "fast-astar": "^1.0.6"
+    "fast-astar": "^1.0.6",
+    "juejin-helper": "^1.7.1"
   },
+  "keywords": ["掘金签到","青龙掘金助手","青龙面板脚本"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/leochen-g/ql-juejinhelper.git"

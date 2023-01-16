@@ -1,7 +1,7 @@
 /*
-  cron 58 6 * * * juejin_seagold.js
+  cron 58 8 * * * juejin_seagold.js
   掘金社区
-  更新时间: 2022-10-24
+  更新时间: 2023-01-16
   活动入口：https://juejin.cn/game/haidijuejin/
   只支持Node.js
   脚本兼容: Node.js
@@ -432,7 +432,7 @@ ${this.history.length ? `\n游戏记录\n${gameLives}` : ""}
   const messageList = [];
   for (let cookie of cookiesArr) {
     const seaGold = new Juejin_seagold(cookie);
-    await $.wait(randomRangeNumber(1000, 5000)); // 初始等待1-5s
+    await $.wait(randomRangeNumber(3000, 5000)); // 初始等待3-5s
     await seaGold.run();
     const content = seaGold.toString();
     console.log(content);
