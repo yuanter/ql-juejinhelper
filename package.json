@@ -8,7 +8,7 @@
     "seagold": "node seagold.js"
   },
   "dependencies": {
-    "juejin-helper": "^1.6.1",
+    "juejin-helper": "^1.7.1",
     "fast-astar": "^1.0.6"
   },
   "repository": {
