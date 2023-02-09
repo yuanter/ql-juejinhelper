@@ -9,7 +9,7 @@
 1、在青龙面板添加订阅
 
 ```shell
-	ql repo https://github.com/yuanter/ql-juejinhelper.git "juejin_|juejinCookies" "juejinCookies" "^juejin[^_]|sendNotify|ql"
+ql repo https://github.com/yuanter/ql-juejinhelper.git "juejin_|juejinCookies" "juejinCookies" "^juejin[^_]|sendNotify|ql"
 ```
 
 2、在面板菜单-依赖管理-NodeJs 添加依赖 `juejin-helper|fast-astar`
