@@ -430,13 +430,23 @@ ${this.history.length ? `\n游戏记录\n${gameLives}` : ""}
     return;
   }
   const messageList = [];
+  let count = 0;
   for (let cookie of cookiesArr) {
-    const seaGold = new Juejin_seagold(cookie);
-    await $.wait(randomRangeNumber(3000, 5000)); // 初始等待3-5s
-    await seaGold.run();
-    const content = seaGold.toString();
-    console.log(content);
-    messageList.push(content);
+      count++;
+      const tip = "第"+count+"个账号"
+      let content = "";
+      try{
+        const seaGold = new Juejin_seagold(cookie);
+        await $.wait(randomRangeNumber(3000, 5000)); // 初始等待3-5s
+        await seaGold.run();
+        content = tip+"\n"+seaGold.toString();
+        messageList.push(content);
+       }catch(e){
+        content = tip + "出错，跳过"
+        messageList.push(content);
+      }
+      console.log(content); // 打印结果
+    
   }
   const message = messageList.join(`\n${"-".repeat(15)}\n`);
   await notify.sendNotify("掘金-海底掘金", message);
