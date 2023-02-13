@@ -339,15 +339,22 @@ function randomRangeNumber(start = 500, end = 1000) {
     return;
   }
   let messageList = [];
+  let count = 0;
   for (let cookie of cookiesArr) {
-    const checkin = new CheckIn(cookie);
-
-    await $.wait(randomRangeNumber(1000, 5000))
-    await checkin.run(); // 执行
-
-    const content = checkin.toString();
-    console.log(content); // 打印结果
-    messageList.push(content);
+    count++;
+    const tip = "第"+count+"个账号"
+    let content = "";
+    try{
+        const checkin = new CheckIn(cookie);
+        await $.wait(randomRangeNumber(1000, 5000))
+        await checkin.run(); // 执行
+        content = tip+"\n"+checkin.toString();
+        messageList.push(content);
+    }catch(e){
+        content = tip + "出错，跳过"
+        messageList.push(content);
+      }
+      console.log(content); // 打印结果
   }
 
   const message = messageList.join(`\n${"-".repeat(15)}\n`);
